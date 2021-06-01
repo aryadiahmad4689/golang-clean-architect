@@ -1,0 +1,13 @@
+version: "2.3"
+
+services: 
+    mysql:
+        container_name: mysql_testing
+        image: mysql:5.7.22
+        ports:
+            - 33060:3306
+        environment:
+            - MYSQL_DATABASE=db_golang_architecture
+            - MYSQL_USER=root
+            - MYSQL_PASSWORD=
+            - MYSQL_ROOT_PASSWORD=root
