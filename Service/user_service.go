@@ -16,6 +16,7 @@ func NewUserService(repo *repository.UserInterface) UserServiceInterFace {
 }
 
 func (u *userService) AddUser(ctx context.Context, user entity.User) (entity.User, error) {
+
 	user, err := u.UserRepo.Store(ctx, user)
 
 	if err != nil {
@@ -26,6 +27,7 @@ func (u *userService) AddUser(ctx context.Context, user entity.User) (entity.Use
 }
 
 func (u *userService) DeleteUser(ctx context.Context, id int64) error {
+
 	err := u.UserRepo.Delete(ctx, id)
 
 	if err != nil {
@@ -36,6 +38,7 @@ func (u *userService) DeleteUser(ctx context.Context, id int64) error {
 }
 
 func (u *userService) FindUseer(ctx context.Context, id int64) (entity.User, error) {
+
 	user, err := u.UserRepo.FindId(ctx, id)
 
 	if err != nil {
