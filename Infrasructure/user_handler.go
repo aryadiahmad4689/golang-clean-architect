@@ -12,6 +12,10 @@ import (
 	"time"
 )
 
+type UserHandler struct {
+	Repo repository.UserInterface
+}
+
 func AddUser(w http.ResponseWriter, r *http.Request) {
 
 	err := r.ParseForm()

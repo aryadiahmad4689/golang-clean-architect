@@ -62,4 +62,5 @@ func (repo *UserImplement) FindId(ctx context.Context, id int64) (entity.User, e
 	} else {
 		return user, errors.New("Id: " + strconv.Itoa(int(id)) + " tidak ditemukan")
 	}
+
 }

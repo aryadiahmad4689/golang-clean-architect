@@ -16,7 +16,6 @@ func NewUserService(repo *repository.UserInterface) UserServiceInterFace {
 }
 
 func (u *userService) AddUser(ctx context.Context, user entity.User) (entity.User, error) {
-
 	user, err := u.UserRepo.Store(ctx, user)
 
 	if err != nil {
