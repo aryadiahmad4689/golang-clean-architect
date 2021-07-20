@@ -21,8 +21,8 @@ jobs:
     - name: run docker
       run: docker-compose up -d
 
-#     - name: Build
-#       run: go build -v ./...
+    - name: Test
+      run: go test Testing/... -v ./...
 
 #     - name: Test
 #       run: go test -v ./...
