@@ -3,8 +3,6 @@ package main
 import (
 	"context"
 	database "golang-clean-architecture/Database"
-	route "golang-clean-architecture/Route"
-	"net/http"
 
 	_ "github.com/go-sql-driver/mysql"
 )
@@ -16,16 +14,16 @@ func main() {
 	// 	return
 	// }
 	MigrateTable()
-	mux := route.Route()
-	server := http.Server{
-		Addr:    "localhost:8080",
-		Handler: mux,
-	}
+	// mux := route.Route()
+	// server := http.Server{
+	// 	Addr:    "localhost:8080",
+	// 	Handler: mux,
+	// }
 
-	err := server.ListenAndServe()
-	if err != nil {
-		panic(err)
-	}
+	// err := server.ListenAndServe()
+	// if err != nil {
+	// 	panic(err)
+	// }
 }
 
 func MigrateTable() {
