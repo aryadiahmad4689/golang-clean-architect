@@ -3,6 +3,7 @@ package database
 import (
 	"database/sql"
 	"fmt"
+	"time"
 )
 
 func createConnection() (*sql.DB, error) {
@@ -16,7 +17,8 @@ func createConnection() (*sql.DB, error) {
 	// conn.SetMaxIdleConns(10)
 	// conn.SetMaxOpenConns(100)
 	// conn.SetConnMaxIdleTime(5 * time.Minute)
-	// conn.SetConnMaxLifetime(60 * time.Minute)
+	conn.SetConnMaxLifetime(60 * time.Minute)
+	// db.SetConnMaxLifetime(time.Second * 10)
 
 	fmt.Println("Success Connect")
 
