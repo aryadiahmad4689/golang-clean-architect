@@ -30,6 +30,7 @@ func MigrateTable() {
 	db, _ := database.GetConnection()
 	defer db.Close()
 	ctx := context.Background()
+	db.ExecContext(ctx, "CREATE database IF NOT EXISTS db_golang_architecture")
 	res, _ := db.ExecContext(ctx, "CREATE table IF NOT EXISTS user(id int PRIMARY key auto_increment,nama VARCHAR(100),alamat VARCHAR(100), age int, married boolean, date date)")
 	res.RowsAffected()
 	// return err
