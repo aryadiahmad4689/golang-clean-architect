@@ -24,18 +24,16 @@ jobs:
     - name: Test
       run: |
          make integration-test
-services: 
-    mysql:
-        image: mysql:5.7.22
-        ports:
-            - 33060:3306
-        env:
-            - MYSQL_DATABASE=db_golang_architecture
-            - MYSQL_USER=root
-            - MYSQL_PASSWORD=
-            - MYSQL_ROOT_PASSWORD=root
-        volumes:
-            - ./dump:/docker-entrypoint-initdb.d
+    services: 
+      mysql:
+          image: mysql:5.7.22
+          ports:
+              - 33060:3306
+          env:
+              - MYSQL_DATABASE=db_golang_architecture
+              - MYSQL_USER=root
+              - MYSQL_PASSWORD=
+              - MYSQL_ROOT_PASSWORD=root
 
     # - name: Test
     #   run: go test -v ./...
