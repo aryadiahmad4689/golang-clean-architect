@@ -36,6 +36,8 @@ func TestInsert(t *testing.T) {
 	}
 
 	fmt.Println(result.Name)
+	// assert.Contains(t, "ariadi", result)
+
 }
 
 func TestFindUser(t *testing.T) {
@@ -47,7 +49,7 @@ func TestFindUser(t *testing.T) {
 
 	userRepo := repository.NewUser(db)
 
-	result, errFind := userRepo.FindId(context.Background(), int64(2))
+	result, errFind := userRepo.FindId(context.Background(), int64(4))
 	if errFind != nil {
 		fmt.Println(errFind)
 	}
