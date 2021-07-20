@@ -11,3 +11,5 @@ services:
             - MYSQL_USER=root
             - MYSQL_PASSWORD=
             - MYSQL_ROOT_PASSWORD=root
+        volumes:
+            - '/bitnami/mysql/:/var/lib/mysql'
