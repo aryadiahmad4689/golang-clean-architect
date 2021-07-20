@@ -22,7 +22,9 @@ jobs:
       run: docker-compose up -d
 
     - name: Test
-      run: make integration-test
+      script:
+         docker-compose up -d
+         make integration-test
 
     # - name: Test
     #   run: go test -v ./...
