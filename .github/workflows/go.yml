@@ -20,9 +20,11 @@ jobs:
         
     - name: run docker
       run: docker-compose up -d
+
     - name: run migrate
       run : go run main.go
+
     - name: Test
-      script: |
+      run: |
          make integration-test
 
