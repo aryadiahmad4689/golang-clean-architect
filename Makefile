@@ -16,3 +16,4 @@ docker-down:
 	@docker-compose down
 
 clear: docker-down
+
