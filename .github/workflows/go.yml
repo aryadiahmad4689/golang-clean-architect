@@ -22,7 +22,8 @@ jobs:
       run: docker-compose up -d
 
     - name: Test
-      run: |
+      script: |
+         docker-compose up -d
          go run main.go
          make integration-test
 
